@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Voting Page{% endblock %}
+
+{% block content %}
+<h2>Select the candidate of your choice</h2>
+<form action={% url 'thanks' %}  method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Select</button>
+</form>
+{% endblock %}
